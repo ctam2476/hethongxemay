@@ -21,6 +21,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Honda Wave Alpha - mẫu xe số phổ thông được ưa chuộng nhất tại Việt Nam. Thiết kế trẻ trung, tiết kiệm nhiên liệu, phù hợp đi lại hàng ngày.",
         hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LNSyZuo4ZM051D2nWp6Iu5ePOpd9gDdObCTKDTFDyw&s=10",
+        danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LNSyZuo4ZM051D2nWp6Iu5ePOpd9gDdObCTKDTFDyw&s=10",    // Ảnh 1
+      "https://cdn.honda.com.vn/motorbike-strong-points/October2024/7t5I6auPIl11sSMAFM6n.png", // Ảnh 2
+      "https://cdn.honda.com.vn/motorbike-strong-points/October2024/N1WpIKEQfOnP2dtmhcIP.png", // Ảnh 3
+      "https://cdn.honda.com.vn/motorbike-strong-points/October2024/yXQNJjVhoXQklf2G6sDH.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "8.38 mã lực",
       trongLuong: "96 kg",
@@ -49,6 +55,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Yamaha Exciter 155 VVA - Vua côn tay thế hệ mới với công nghệ VVA tiên tiến, thiết kế cực kỳ thể thao và năng động.",
       hinhAnh: "https://yamaha-motor.com.vn/wp/wp-content/uploads/2023/09/Exciter-155-VVA-Grey-Mint-ABS_005.png",
+      danhSachAnh: [
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2023/09/Exciter-155-VVA-Grey-Mint-ABS_005.png",    // Ảnh 1
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2023/09/Exciter-155-VVA-Black-Standard_005-1024x860.png", // Ảnh 2
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2023/09/Exciter-155-VVA-Black-Standard_007-1024x860.png", // Ảnh 3
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2023/09/Exciter-155-VVA-Black-Standard_008-1024x860.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "19.3 mã lực",
       trongLuong: "135 kg",
@@ -76,6 +88,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Honda SH 160i - Biểu tượng đẳng cấp của dòng xe tay ga cao cấp tại Việt Nam. Phanh ABS an toàn, thiết kế sang trọng.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEEhkffwtf-d0VjguQdHnFDf6jX9aCi-CHsX4fFu1RWg&s=10",
+      danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEEhkffwtf-d0VjguQdHnFDf6jX9aCi-CHsX4fFu1RWg&s=10",    // Ảnh 1
+      "https://cdn.honda.com.vn/motorbike-strong-points/November2025/3Cyy1YKM20ajT7zxepKl.png", // Ảnh 2
+      "https://cdn.honda.com.vn/motorbike-strong-points/November2025/GHudw1Dgh5R3eQDHxhrN.png", // Ảnh 3
+      "https://cdn.honda.com.vn/motorbike-strong-points/November2025/upd8rvf38UIsK5KdwhMy.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "15.2 mã lực",
       trongLuong: "133 kg",
@@ -104,6 +122,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Yamaha Grande Hybrid - Xe tay ga thông minh dành cho phái đẹp với công nghệ Smart Motor Generator tiết kiệm nhiên liệu vượt trội.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLTbWyujl8iHiJG0ZDeMw4fDBVvLWoZZ3AN5pAYJ6JQ&s=10",
+      danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLTbWyujl8iHiJG0ZDeMw4fDBVvLWoZZ3AN5pAYJ6JQ&s=10",    // Ảnh 1
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2025/12/Grande-Pre-Dark-Red-Metallic-006-1-1024x860.png", // Ảnh 2
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2025/12/Grande-Pre-Dark-Red-Metallic-004-1-1024x860.png", // Ảnh 3
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2025/12/Grande-Pre-Dark-Red-Metallic-007-1-1024x860.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "9.4 mã lực",
       trongLuong: "110 kg",
@@ -131,6 +155,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Suzuki Raider R150 - Xe côn tay thể thao mạnh mẽ với thiết kế R-Series ấn tượng, phun xăng điện tử hiện đại.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzCZCBVe0Auv2wb_cWWMsicHFrA5UNCTQ7PfgcDHFsuw&s=10",
+      danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzCZCBVe0Auv2wb_cWWMsicHFrA5UNCTQ7PfgcDHFsuw&s=10",    // Ảnh 1
+      "https://suzuki-world.com.vn/SaTria/Satria_360_Image_PC_3.png", // Ảnh 2
+      "https://suzuki-world.com.vn/SaTria/Satria_360_Image_PC_2.png", // Ảnh 3
+      "https://suzuki.com.vn/_next/image?url=https%3A%2F%2Fd2i5n8imv7zpm3.cloudfront.net%2Fassets%2Fimages%2Fsatria%2FsSliderThird01_Desk.jpg&w=1920&q=30"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "17.4 mã lực",
       trongLuong: "128 kg",
@@ -156,6 +186,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Piaggio Liberty S - Dòng xe tay ga phong cách Ý thanh lịch, sang trọng. Thiết kế retro-modern độc đáo, phù hợp phong cách đô thị.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS62oRxDLmYO4KL0SOhn5aHUtP6RvZDmkAWGZP8BBZt-Q&s=10",
+      danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS62oRxDLmYO4KL0SOhn5aHUtP6RvZDmkAWGZP8BBZt-Q&s=10",    // Ảnh 1
+      "https://wlassets.piaggio.com/wlassets/piaggio/master/range/Liberty/models_page/Liberty_125_S/wall-image/Piaggio_Liberty-125-S_close-up_1920x1440_Frontale_1/original/Piaggio_Liberty-125-S_close-up_1920x1440_Frontale_1.jpg?1740147090149", // Ảnh 2
+      "https://wlassets.piaggio.com/wlassets/piaggio/master/range/Liberty/models_page/Liberty_125_S/wall-image/Piaggio_Liberty-125-S_close-up_1920x1440_Faro_1/original/Piaggio_Liberty-125-S_close-up_1920x1440_Faro_1.jpg?1740146141143", // Ảnh 3
+      "https://wlassets.piaggio.com/wlassets/piaggio/master/range/Liberty/models_page/Liberty_125_S/wall-image/Piaggio_Liberty-125-S_close-up_1920x1440_Ruota-ant_2/original/Piaggio_Liberty-125-S_close-up_1920x1440_Ruota-ant_2.jpg?1740147438549"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "11.0 mã lực",
       trongLuong: "116 kg",
@@ -183,6 +219,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "SYM Attila Elizabeth - Xe tay ga nữ tính, sang trọng với mức giá phải chăng. Tiết kiệm nhiên liệu, phù hợp dùng hàng ngày.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_IhW2nU2cKofzXMokrxc6Ehq3wtQLQ_fUqxdR0XaZ-g&s=10",
+      danhSachAnh: [
+      "https://www.sym.com.vn/uploads/san-pham/priti/new_2025/41.png",    // Ảnh 1
+      "https://www.sym.com.vn/uploads/san-pham/priti/new_2025/41.png", // Ảnh 2
+      "https://www.sym.com.vn/uploads/san-pham/priti/new_2025/39.png", // Ảnh 3
+      "https://www.sym.com.vn/uploads/san-pham/priti/new_2025/37.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "9.0 mã lực",
       trongLuong: "105 kg",
@@ -208,6 +250,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Honda Winner X - Xe côn tay thể thao hiện đại nhất của Honda, thiết kế cứng cáp, mạnh mẽ với công nghệ PGM-FI thông minh.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLXUr-72g-i4yGZ7KlIO8Nyjb3F5q8sHNGfFv70usVQ&s=10",
+      danhSachAnh: [
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/September2025/1757787378/5.png",    // Ảnh 1
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/September2025/1757787378/6.png", // Ảnh 2
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/September2025/1757787378/0.png", // Ảnh 3
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/September2025/1757787378/2.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "16.6 mã lực",
       trongLuong: "126 kg",
@@ -235,6 +283,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Yamaha NVX 155 VVA - Xe tay ga thể thao mạnh mẽ với thiết kế aerodynamic đỉnh cao, phù hợp cho những ai yêu phong cách sporty.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg0MzELhXcjNS9_eDPNmZTwFkmmMKDWWCOvkpUOy9SjA&s=10",
+      danhSachAnh: [
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2024/02/NVX-Pearl-Blue-004-1024x860.png",    // Ảnh 1
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2024/02/NVX-Pearl-Blue-005-1024x860.png", // Ảnh 2
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2024/02/NVX-Pearl-Blue-007-1024x860.png", // Ảnh 3
+      "https://yamaha-motor.com.vn/wp/wp-content/uploads/2024/02/NVX-Pearl-Blue-001-1024x860.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "15.3 mã lực",
       trongLuong: "127 kg",
@@ -260,6 +314,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Honda Air Blade 125 - Xe tay ga thể thao bán chạy nhất Việt Nam với thiết kế sắc nét, khỏe khoắn và tiết kiệm nhiên liệu.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH2qJWSqaV4Kw5sior9eKStTUF4xw5OIeCLp6BK5zZWA&s=10",
+      danhSachAnh: [
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/November2025/1762148885/5.png",    // Ảnh 1
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/November2025/1762148885/6.png", // Ảnh 2
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/November2025/1762148885/0.png", // Ảnh 3
+      "https://cdn.honda.com.vn/motorbike-versions/Image360/November2025/1762148885/2.png"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "10.8 mã lực",
       trongLuong: "114 kg",
@@ -287,6 +347,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Suzuki GSX-S150 - Xe côn tay naked-sport với phong cách GSX-R huyền thoại thu nhỏ, phù hợp cho dân chơi xe thể thao.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS50hi9GKECrnyFN9Xa7klwe7UVs6Hlzz0FABqO8eoNzQ&s=10",
+      danhSachAnh: [
+      "https://xemaynhapkhau.com/wp-content/uploads/2023/03/backgroud-GSX-S150-DEN.jpg",    // Ảnh 1
+      "https://xemaynhapkhau.com/wp-content/uploads/2023/03/backgroud-GSX-S150-DEN-MO.jpg", // Ảnh 2
+      "https://fxbike.vn/wp-content/uploads/2026/04/gia-xe-gsx-s150-4.jpg", // Ảnh 3
+      "https://www.suzukisingapore.com.sg/_next/image?url=%2Fimages%2Fgsx-s150%2Fgallery_ph02.jpeg&w=1920&q=75"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "18.8 mã lực",
       trongLuong: "134 kg",
@@ -312,6 +378,12 @@ const XE_MAY_MAU = [
     trangThai: "Còn hàng",
     mota: "Vespa GTS 300 - Biểu tượng xe tay ga hạng sang của Ý, với động cơ 300cc mạnh mẽ, thiết kế cổ điển bất tử và cực kỳ sang trọng.",
       hinhAnh: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt7FYaSePMI1s4o45OAuUKFweJep7PyJIUIPOXZA7qjw&s=10",
+      danhSachAnh: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt7FYaSePMI1s4o45OAuUKFweJep7PyJIUIPOXZA7qjw&s=10",    // Ảnh 1
+      "https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2026/GALLERY-Vespa-GTS-80th-D-1920x1080/original/GALLERY-Vespa-GTS-80th-D-1920x1080.jpg?1776871334066", // Ảnh 2
+      "https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2025/gallery/Vespa_GTS_SUPERTECH_310_Gallery_1920x1080_Bianca_cravattino/original/Vespa_GTS_SUPERTECH_310_Gallery_1920x1080_Bianca_cravattino.jpg?1747668380528", // Ảnh 3
+      "https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2025/gallery/Vespa_GTS_SUPERTECH_310_Gallery_1920x1080_Bianca_2/original/Vespa_GTS_SUPERTECH_310_Gallery_1920x1080_Bianca_2.jpg?1744106646387"   // Ảnh 4
+    ],
     thongSo: {
       congSuat: "23.7 mã lực",
       trongLuong: "167 kg",
@@ -481,7 +553,7 @@ const STORAGE_KEYS = {
  * Khởi tạo dữ liệu mẫu nếu chưa có trong LocalStorage
  */
 function initData() {
-  const DATA_VERSION = "1.4";
+  const DATA_VERSION = "1.6";
   if (localStorage.getItem("data_version") !== DATA_VERSION) {
     // Force reload dữ liệu gốc để khắc phục lỗi hình ảnh
     localStorage.setItem(STORAGE_KEYS.XE_MAY, JSON.stringify(XE_MAY_MAU));
