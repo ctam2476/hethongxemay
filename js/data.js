@@ -361,7 +361,7 @@ const PHU_TUNG_MAU = [
     giaBan: 620000,
     tonKho: 30,
     nhaCungCap: "Yuasa Battery Vietnam",
-    hinhAnh: "https://www.revzilla.com/product_images/0073/7957/yuasa_ytz7_s_factory_activated_agm_high_performance_battery.jpg",
+    hinhAnh: "https://alobike.vn/uploads/ac-quy-gs-gtz6v-1-ava.gif",
     moTa: "Bình ắc quy Yuasa chính hãng, tuổi thọ cao, ổn định cho các loại xe máy."
   },
   {
@@ -372,7 +372,7 @@ const PHU_TUNG_MAU = [
     giaBan: 230000,
     tonKho: 80,
     nhaCungCap: "Philips Automotive",
-    hinhAnh: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/NTD-san-pham/den-led-2-tang-ex150/led-zhipat-2-tang-exciter-150.jpg",
     moTa: "Đèn LED pha H4 ánh sáng trắng 6000K, tiết kiệm điện, tuổi thọ cao gấp 3 bóng thường."
   },
   {
@@ -427,7 +427,7 @@ const PHU_TUNG_MAU = [
     giaBan: 145000,
     tonKho: 150,
     nhaCungCap: "Castrol Vietnam",
-    hinhAnh: "https://www.revzilla.com/product_images/0186/5106/castrol_power1_synthetic4_t_engine_oil_5_w40.jpg",
+    hinhAnh: "https://alobike.vn/uploads/lop/nhot-castrol-power1_1.jpg",
     moTa: "Dầu nhớt Castrol Power1 4T bảo vệ động cơ toàn diện, giảm ma sát, kéo dài tuổi thọ xe."
   },
   {
