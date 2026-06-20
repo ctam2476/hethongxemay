@@ -350,8 +350,7 @@ const PHU_TUNG_MAU = [
     giaBan: 120000,
     tonKho: 200,
     nhaCungCap: "Honda Parts Vietnam",
-    hinhAnh: "https://product.hstatic.net/1000391844/product/3pmgyck9au0vnimlwqh9_simg_d0daf0_800x1200_max_777c0349678f40ae9756749c54f809b0_grande.jpg
-",
+    hinhAnh: "https://product.hstatic.net/1000391844/product/3pmgyck9au0vnimlwqh9_simg_d0daf0_800x1200_max_777c0349678f40ae9756749c54f809b0_grande.jpg",
     moTa: "Dầu nhớt chính hãng Honda, bảo vệ động cơ tối ưu cho xe máy Honda."
   },
   {
