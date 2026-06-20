@@ -74,27 +74,29 @@ function renderXeDetails() {
     if(xe.tonKho === 0) badge.innerText = 'Hết hàng';
   }
 
-  // Hình ảnh
+  // Hình ảnh chính
   const mainImg = document.getElementById('imgMain');
   mainImg.src = xe.hinhAnh;
   mainImg.onerror = function() { this.src = 'https://via.placeholder.com/600x400?text=No+Image'; };
 
-  // Generate Thumbnail giả lập (Sử dụng ảnh thật nhưng clone ra vài bản cho đẹp UI)
+  // ==========================================
+  // CẬP NHẬT: Render Thumbnail động từ dữ liệu
+  // ==========================================
   const thumbContainer = document.getElementById('thumbList');
-  thumbContainer.innerHTML = `
-    <div class="col-3">
-      <img src="${xe.hinhAnh}" class="active thumb-img" onclick="changeImage(this)">
-    </div>
-    <div class="col-3">
-      <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
-    </div>
-    <div class="col-3">
-      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
-    </div>
-    <div class="col-3">
-      <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
-    </div>
-  `;
+  thumbContainer.innerHTML = ''; // Làm sạch container
+
+  // Kiểm tra xem xe có mảng danhSachAnh không, nếu không thì dùng tạm ảnh chính
+  const mangHinhAnh = (xe.danhSachAnh && xe.danhSachAnh.length > 0) ? xe.danhSachAnh : [xe.hinhAnh];
+
+  mangHinhAnh.forEach((urlAnh, index) => {
+    // Tự động active ảnh đầu tiên
+    const isActive = index === 0 ? 'active' : '';
+    thumbContainer.innerHTML += `
+      <div class="col-3">
+        <img src="${urlAnh}" class="thumb-img ${isActive}" onclick="changeImage(this)" onerror="this.src='https://via.placeholder.com/200x200?text=Lỗi+Ảnh'">
+      </div>
+    `;
+  });
 
   // Tabs: Mô tả
   document.getElementById('txtMoTaContent').innerHTML = (xe.mota || 'Đang cập nhật mô tả...').replace(/\n/g, '<br>');
