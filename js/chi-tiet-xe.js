@@ -89,9 +89,6 @@ function renderXeDetails() {
       <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
     </div>
     <div class="col-3">
-      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
-    </div>
-    <div class="col-3">
       <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=200&q=80" class="thumb-img" onclick="changeImage(this)">
     </div>
   `;
