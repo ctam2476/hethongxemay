@@ -411,7 +411,7 @@ const PHU_TUNG_MAU = [
     giaBan: 480000,
     tonKho: 50,
     nhaCungCap: "Michelin Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/san-pham/lop-xe-may/lop-michelin/lop-michelin-80-90-17-city-grip-pro/vo-michelin-city-grip-pro-8090-17-661-slide-products.jpg",
     moTa: "Lốp xe cao cấp Michelin dành cho xe máy phổ thông, bám đường tốt, bền bỉ."
   },
   {
@@ -422,7 +422,7 @@ const PHU_TUNG_MAU = [
     giaBan: 120000,
     tonKho: 200,
     nhaCungCap: "Honda Parts Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=200&q=80",
+    hinhAnh: "https://product.hstatic.net/1000391844/product/3pmgyck9au0vnimlwqh9_simg_d0daf0_800x1200_max_777c0349678f40ae9756749c54f809b0_grande.jpg",
     moTa: "Dầu nhớt chính hãng Honda, bảo vệ động cơ tối ưu cho xe máy Honda."
   },
   {
@@ -433,7 +433,7 @@ const PHU_TUNG_MAU = [
     giaBan: 620000,
     tonKho: 30,
     nhaCungCap: "Yuasa Battery Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/ac-quy-gs-gtz6v-1-ava.gif",
     moTa: "Bình ắc quy Yuasa chính hãng, tuổi thọ cao, ổn định cho các loại xe máy."
   },
   {
@@ -444,7 +444,7 @@ const PHU_TUNG_MAU = [
     giaBan: 230000,
     tonKho: 80,
     nhaCungCap: "Philips Automotive",
-    hinhAnh: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/NTD-san-pham/den-led-2-tang-ex150/led-zhipat-2-tang-exciter-150.jpg",
     moTa: "Đèn LED pha H4 ánh sáng trắng 6000K, tiết kiệm điện, tuổi thọ cao gấp 3 bóng thường."
   },
   {
@@ -455,7 +455,7 @@ const PHU_TUNG_MAU = [
     giaBan: 75000,
     tonKho: 100,
     nhaCungCap: "PT Auto Parts",
-    hinhAnh: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/HONDA/GUONG/AVAR/vision-guong-20.jpg",
     moTa: "Gương chiếu hậu chất lượng cao, chống chói ban đêm, tầm nhìn rộng 180 độ."
   },
   {
@@ -466,7 +466,7 @@ const PHU_TUNG_MAU = [
     giaBan: 90000,
     tonKho: 60,
     nhaCungCap: "Honda Parts Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/ma-phanh/ma-phanh-truoc/wave-rsx/ma-phanh-xe-may.jpg",
     moTa: "Má phanh đĩa chính hãng Honda cho Wave Alpha, đảm bảo phanh ăn, an toàn tuyệt đối."
   },
   {
@@ -477,7 +477,7 @@ const PHU_TUNG_MAU = [
     giaBan: 185000,
     tonKho: 40,
     nhaCungCap: "DID Chain Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/Nhong-xich-wave-alpha/honda-wave-110-xich_1.jpg",
     moTa: "Bộ nhông sên dĩa DID cao cấp cho Honda Wave, bền bỉ, truyền lực êm ái."
   },
   {
@@ -488,7 +488,7 @@ const PHU_TUNG_MAU = [
     giaBan: 590000,
     tonKho: 35,
     nhaCungCap: "Dunlop Tires Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1508357710528-af54f7618754?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/lop/dunlop/1407014/lop-xe-14070-14-SC-SMART-61P-TL-min.jpg",
     moTa: "Lốp xe tay ga Dunlop Scootsmart, bám đường xuất sắc, êm ru khi di chuyển."
   },
   {
@@ -499,7 +499,7 @@ const PHU_TUNG_MAU = [
     giaBan: 145000,
     tonKho: 150,
     nhaCungCap: "Castrol Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1517994112540-009c47ea476b?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/lop/nhot-castrol-power1_1.jpg",
     moTa: "Dầu nhớt Castrol Power1 4T bảo vệ động cơ toàn diện, giảm ma sát, kéo dài tuổi thọ xe."
   },
   {
@@ -510,7 +510,7 @@ const PHU_TUNG_MAU = [
     giaBan: 140000,
     tonKho: 45,
     nhaCungCap: "Yamaha Parts Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1558980664-769d59546b3d?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/010212-vision_2.jpg",
     moTa: "Đèn xi-nhan LED cho Yamaha Exciter, nhấp nháy đẹp, tiết kiệm điện, dễ lắp đặt."
   },
   {
@@ -521,7 +521,7 @@ const PHU_TUNG_MAU = [
     giaBan: 390000,
     tonKho: 25,
     nhaCungCap: "GS Battery Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/danh-muc/ac-quy-xe-may.jpg",
     moTa: "Bình ắc quy GS MF không cần bảo dưỡng, phù hợp xe số, xe tay ga cỡ nhỏ."
   },
   {
@@ -532,7 +532,7 @@ const PHU_TUNG_MAU = [
     giaBan: 105000,
     tonKho: 55,
     nhaCungCap: "Honda Parts Vietnam",
-    hinhAnh: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&q=80",
+    hinhAnh: "https://alobike.vn/uploads/ma-phanh/ma-phanh-sau/click/ma-phanh-sau-xe-click.jpg",
     moTa: "Má phanh tang trống chính hãng Honda dành cho Click, đảm bảo an toàn và hiệu quả phanh tối ưu."
   }
 ];
