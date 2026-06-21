@@ -4,49 +4,362 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quản Lý Phụ Tùng | MotoSys</title>
-  
-  <!-- Bootstrap 5 CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Custom CSS -->
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/danh-sach-xe.css"> <!-- Dùng chung style toolbar/table -->
+  <link rel="stylesheet" href="css/danh-sach-xe.css">
   <link rel="stylesheet" href="css/phu-tung.css">
+
+  <style>
+    /* =====================================================
+       STYLE RIÊNG TRANG PHỤ TÙNG – CARD GRID LAYOUT
+       Đặt tại đây để không đụng phu-tung.css
+       ===================================================== */
+
+    /* --- Stats Row --- */
+    .pt-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .pt-stat-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      border-left: 4px solid #dee2e6;
+    }
+
+    .pt-stat-card.danger  { border-left-color: #dc3545; }
+    .pt-stat-card.success { border-left-color: #28a745; }
+
+    .pt-stat-label {
+      font-size: 13px;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 6px;
+    }
+
+    .pt-stat-value {
+      font-size: 26px;
+      font-weight: 700;
+      color: #212529;
+    }
+
+    .pt-stat-value.danger  { color: #dc3545; }
+    .pt-stat-value.success { color: #28a745; }
+
+    /* --- Filter Bar --- */
+    .pt-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pt-filter-bar .input-group {
+      flex: 1;
+      min-width: 220px;
+      max-width: 380px;
+    }
+
+    .pt-filter-bar .form-control,
+    .pt-filter-bar .form-select,
+    .pt-filter-bar .input-group-text {
+      font-size: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    /* --- Category Pills --- */
+    .pt-cat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pt-cat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid #dee2e6;
+      background: #fff;
+      cursor: pointer;
+      color: #495057;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    .pt-cat-pill:hover:not(.active) {
+      background: #f8f9fa;
+      border-color: #adb5bd;
+    }
+
+    .pt-cat-pill.active {
+      background: #212529;
+      color: #fff;
+      border-color: #212529;
+    }
+
+    .pt-cat-pill.active .pt-cat-dot { opacity: .8; }
+
+    .pt-cat-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .pt-cat-count {
+      opacity: .55;
+      font-weight: 400;
+    }
+
+    /* --- Grid Container --- */
+    .pt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .pt-grid { grid-template-columns: repeat(2, 1fr); }
+      .pt-stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .pt-grid { grid-template-columns: 1fr; }
+      .pt-stats-row { grid-template-columns: 1fr; }
+    }
+
+    /* --- PT Card --- */
+    .pt-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #f0f0f0;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+
+    .pt-card:hover {
+      border-color: #dee2e6;
+      box-shadow: 0 6px 20px rgba(0,0,0,.1);
+      transform: translateY(-3px);
+    }
+
+    /* Card Image Area */
+    .pt-card-img-wrap {
+      position: relative;
+      background: #f8f9fa;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .pt-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Category Badge (overlaid on image) */
+    .pt-card-cat-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 12px;
+      line-height: 1.6;
+    }
+
+    /* Action Buttons (overlaid on image) */
+    .pt-card-actions {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      display: flex;
+      gap: 4px;
+      opacity: 0;
+      transition: opacity .15s;
+    }
+
+    .pt-card:hover .pt-card-actions {
+      opacity: 1;
+    }
+
+    .pt-card-action-btn {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 7px;
+      border: 1px solid #dee2e6;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: #6c757d;
+      transition: all .15s;
+    }
+
+    .pt-card-action-btn:hover { background: #f8f9fa; }
+    .pt-card-action-btn.delete:hover { color: #dc3545; border-color: #f5c6cb; background: #fff5f5; }
+    .pt-card-action-btn.edit:hover   { color: #212529; border-color: #adb5bd; }
+
+    /* Card Body */
+    .pt-card-body {
+      padding: 10px 12px 12px;
+    }
+
+    .pt-card-code {
+      font-size: 12px;
+      color: #adb5bd;
+      font-family: monospace;
+      margin-bottom: 3px;
+      letter-spacing: .05em;
+    }
+
+    .pt-card-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #212529;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pt-card-supplier {
+      font-size: 14px;
+      color: #6c757d;
+      margin-bottom: 12px;
+    }
+
+    /* Price + Stock Row */
+    .pt-card-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .pt-card-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #dc3545;
+    }
+
+    .pt-stock-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    .pt-stock-bar-bg {
+      width: 72px;
+      height: 6px;
+      background: #e9ecef;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .pt-stock-bar {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .pt-stock-label {
+      font-size: 13px;
+      color: #6c757d;
+    }
+
+    .pt-stock-label.low {
+      color: #dc3545;
+      font-weight: 600;
+    }
+
+    /* Add-to-cart Button (bottom of card) */
+    .pt-card-cart-btn {
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 7px;
+      border: 1px solid #dee2e6;
+      background: #fff;
+      font-size: 14px;
+      color: #495057;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all .15s;
+      font-weight: 500;
+    }
+
+    .pt-card-cart-btn:hover {
+      background: #212529;
+      color: #fff;
+      border-color: #212529;
+    }
+
+    /* --- Empty State --- */
+    .pt-empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: #adb5bd;
+    }
+
+    .pt-empty-state i {
+      font-size: 48px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .pt-empty-state p {
+      font-size: 15px;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR (giữ nguyên) -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand" href="trang-chu.html">
-        <i class="fa-solid fa-motorcycle me-2"></i>MOTOR<span>SYS</span>
+        <i class="fa-solid fa-motorcycle me-2"></i>MOTO<span>SYS</span>
       </a>
       <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="trang-chu.html">Trang Chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="danh-sach-xe-may.html">Danh Sách Xe Máy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="danh-sach-phu-tung.html">Danh Sách Phụ Tùng</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hoa-don.html">Hóa Đơn</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="trang-chu.html">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="danh-sach-xe-may.html">Danh Sách Xe Máy</a></li>
+          <li class="nav-item"><a class="nav-link active" href="danh-sach-phu-tung.html">Danh Sách Phụ Tùng</a></li>
+          <li class="nav-item"><a class="nav-link" href="hoa-don.html">Hóa Đơn</a></li>
         </ul>
         <div class="d-flex align-items-center">
           <a href="hoa-don.html" class="btn btn-outline-light position-relative">
             <i class="fa-solid fa-cart-shopping"></i> Lập hóa đơn
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">
-              0
-            </span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
           </a>
         </div>
       </div>
@@ -55,99 +368,63 @@
 
   <!-- MAIN CONTENT -->
   <main class="container py-4">
+
     <!-- Header Page -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h2 class="mb-0">Quản Lý Phụ Tùng</h2>
-      <button class="btn btn-primary" id="btnThemPT" data-bs-toggle="modal" data-bs-target="#modalPhuTung">
+      <h2 class="mb-0" style="font-size: 30px; font-weight: 700;">Quản Lý Phụ Tùng</h2>
+      <button class="btn btn-primary btn-lg" id="btnThemPT" data-bs-toggle="modal" data-bs-target="#modalPhuTung">
         <i class="fa-solid fa-plus me-2"></i>Thêm Phụ Tùng
       </button>
     </div>
 
-    <!-- Toolbar Filters & Search -->
-    <div class="filter-toolbar card mb-4">
-      <div class="card-body">
-        <div class="row g-3">
-          <!-- Search -->
-          <div class="col-md-4">
-            <div class="input-group">
-              <span class="input-group-text bg-white"><i class="fa-solid fa-search text-muted"></i></span>
-              <input type="text" class="form-control" id="searchPT" placeholder="Tìm tên phụ tùng, mã...">
-            </div>
-          </div>
-          <!-- Filter Loại -->
-          <div class="col-md-3">
-            <select class="form-select" id="filterLoaiPT">
-              <option value="all">Tất cả loại phụ tùng</option>
-              <option value="Lốp xe">Lốp xe</option>
-              <option value="Dầu nhớt">Dầu nhớt</option>
-              <option value="Bình ắc quy">Bình ắc quy</option>
-              <option value="Đèn xe">Đèn xe</option>
-              <option value="Gương chiếu hậu">Gương chiếu hậu</option>
-              <option value="Phanh">Phanh</option>
-              <option value="Nhông sên dĩa">Nhông sên dĩa</option>
-            </select>
-          </div>
-          <!-- Filter Giá -->
-          <div class="col-md-3">
-            <select class="form-select" id="filterGiaPT">
-              <option value="all">Tất cả mức giá</option>
-              <option value="duoi100">Dưới 100k</option>
-              <option value="100-300">Từ 100k - 300k</option>
-              <option value="300-500">Từ 300k - 500k</option>
-              <option value="tren500">Trên 500k</option>
-            </select>
-          </div>
-          <!-- Sort -->
-          <div class="col-md-2">
-            <select class="form-select" id="sortGiaPT">
-              <option value="default">Sắp xếp</option>
-              <option value="asc">Giá: Tăng dần</option>
-              <option value="desc">Giá: Giảm dần</option>
-            </select>
-          </div>
-        </div>
+    <!-- Stats Row (rendered by JS) -->
+    <div id="ptStatsRow" class="pt-stats-row mb-4"></div>
+
+    <!-- Filter Bar -->
+    <div class="pt-filter-bar mb-3">
+      <!-- Search -->
+      <div class="input-group">
+        <span class="input-group-text bg-white border-end-0">
+          <i class="fa-solid fa-search text-muted"></i>
+        </span>
+        <input type="text" class="form-control border-start-0" id="searchPT" placeholder="Tìm tên phụ tùng, mã...">
       </div>
+
+      <!-- Price filter -->
+      <select class="form-select w-auto" id="filterGiaPT">
+        <option value="all">Tất cả mức giá</option>
+        <option value="duoi100">Dưới 100k</option>
+        <option value="100-300">100k – 300k</option>
+        <option value="300-500">300k – 500k</option>
+        <option value="tren500">Trên 500k</option>
+      </select>
+
+      <!-- Sort -->
+      <select class="form-select w-auto" id="sortGiaPT">
+        <option value="default">Sắp xếp</option>
+        <option value="asc">Giá tăng dần</option>
+        <option value="desc">Giá giảm dần</option>
+        <option value="stock-asc">Tồn kho thấp nhất</option>
+      </select>
     </div>
 
-    <!-- Data Table -->
-    <div class="card shadow-sm">
-      <div class="card-body p-0">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0" id="tablePhuTung">
-            <thead class="table-light">
-              <tr>
-                <th width="80">Mã PT</th>
-                <th width="80">Hình ảnh</th>
-                <th>Tên Phụ Tùng</th>
-                <th>Loại</th>
-                <th>Nhà cung cấp</th>
-                <th>Giá Bán</th>
-                <th width="80" class="text-center">Tồn kho</th>
-                <th width="120" class="text-center">Thao tác</th>
-              </tr>
-            </thead>
-            <tbody id="tbodyPhuTung">
-              <!-- Render by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <!-- Category Pills (rendered by JS) -->
+    <div id="ptCatPills" class="pt-cat-pills mb-3"></div>
 
-    <!-- Pagination -->
-    <div class="d-flex justify-content-between align-items-center mt-3">
-      <div class="text-muted" id="infoPagination">
-        Hiển thị 1 - 10 trong 20
-      </div>
-      <nav aria-label="Page navigation">
-        <ul class="pagination pagination-sm mb-0" id="paginationContainer">
-          <!-- Render by JS -->
-        </ul>
+    <!-- Pagination Info + Controls -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="text-muted" id="infoPagination" style="font-size: 15px;">Hiển thị 1 - 10 trong 12</div>
+      <nav>
+        <ul class="pagination mb-0" id="paginationContainer"></ul>
       </nav>
     </div>
+
+    <!-- GRID VIEW -->
+    <div id="ptGridContainer" class="pt-grid"></div>
+
   </main>
 
-  <!-- MODAL THÊM / SỬA PHỤ TÙNG -->
+  <!-- MODAL THÊM / SỬA (giữ nguyên hoàn toàn) -->
   <div class="modal fade" id="modalPhuTung" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -158,7 +435,6 @@
         <div class="modal-body">
           <form id="formPhuTung">
             <input type="hidden" id="formActionPT" value="add">
-            
             <div class="row g-3 mb-3">
               <div class="col-md-4">
                 <label class="form-label">Mã phụ tùng</label>
@@ -168,7 +444,6 @@
                 <label class="form-label">Tên phụ tùng</label>
                 <input type="text" class="form-control" id="inpTenPT" required>
               </div>
-              
               <div class="col-md-6">
                 <label class="form-label">Loại phụ tùng</label>
                 <select class="form-select" id="inpLoaiPT" required>
@@ -187,7 +462,6 @@
                 <label class="form-label">Nhà cung cấp</label>
                 <input type="text" class="form-control" id="inpNhaCungCap" required>
               </div>
-
               <div class="col-md-4">
                 <label class="form-label">Giá nhập (VNĐ)</label>
                 <input type="number" class="form-control" id="inpGiaNhapPT" required min="0">
@@ -200,7 +474,6 @@
                 <label class="form-label">Số lượng tồn</label>
                 <input type="number" class="form-control" id="inpTonKhoPT" required min="0">
               </div>
-
               <div class="col-12">
                 <label class="form-label">Đường dẫn hình ảnh (URL)</label>
                 <input type="url" class="form-control" id="inpHinhAnhPT" placeholder="https://..." required>
@@ -223,7 +496,7 @@
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION -->
+  <!-- TOAST (giữ nguyên) -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header text-white bg-success" id="toastHeader">
@@ -235,14 +508,13 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (giữ nguyên) -->
   <footer class="mt-5">
     <div class="container text-center">
       <p class="mb-0 text-muted">&copy; 2024 MotoSys. Tất cả quyền được bảo lưu.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/phu-tung.js"></script>
