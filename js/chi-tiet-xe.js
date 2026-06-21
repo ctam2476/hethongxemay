@@ -230,7 +230,7 @@ function setupEventListeners() {
 
   // Submit form đánh giá
   document.getElementById('formReview').addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault();// Chặn reload trang của trình duyệt
     submitReview();
   });
 }
@@ -307,7 +307,7 @@ function addToCart() {
     // Đã có, tăng số lượng
     // Kiểm tra tồn kho trước
     if (cart[existIndex].soLuong >= currentXe.tonKho) {
-      showToast('Thất bại', `Số lượng tồn kho chỉ còn ${currentXe.tonKho} chiếc!`, 'error');
+      showToast('Thất bại', `Số lượng tồn kho không đủ`, 'error');
       return;
     }
     cart[existIndex].soLuong += 1;
