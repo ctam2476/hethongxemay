@@ -257,7 +257,7 @@ function renderGridPT(items, total) {
           <!-- Giá + thanh tồn kho -->
           <div class="pt-card-bottom">
             <div class="pt-card-price">${formatCurrency(pt.giaBan)}</div>
-            <div class="pt-stock-wrap">
+            <div class="pt-stock-wrap" title="Còn lại ${pt.tonKho} cái trong kho">
               <div class="pt-stock-bar-bg">
                 <div class="pt-stock-bar"
                      style="width:${pct.toFixed(0)}%;background:${barColor}"></div>
